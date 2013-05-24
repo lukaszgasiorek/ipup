@@ -1,0 +1,28 @@
+# wx-config script
+WX_CONFIG = /usr/x86_64-w64-mingw32/sys-root/mingw/bin/wx-config
+
+# C++ compiler
+CXX = `$(WX_CONFIG) --cxx`
+
+WINDRES = `$(WX_CONFIG) --rescomp`
+
+# Standard flags for C++
+CXXFLAGS = -Wall -pedantic -std=c++11 -O3 -DNOPCH -DNDEBUG
+
+# Standard linker flags
+LDFLAGS = -s -static -lwininet
+
+all: ipup.exe
+
+clean:
+	rm /*.o
+	rm ./ipup.exe
+
+ipup.exe: ipup.o ipup.rc.o
+	$(CXX) ipup.o ipup.rc.o `$(WX_CONFIG) --libs core,net,base --static` $(LDFLAGS) -o $@
+
+%.o: %.cpp
+	$(CXX) -c $< $(CXXFLAGS) `$(WX_CONFIG) --cxxflags` -o $@
+
+ipup.rc.o:
+	$(WINDRES) ipup.rc --use-temp-file 'ipup.rc.o'
