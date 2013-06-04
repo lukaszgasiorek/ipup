@@ -160,6 +160,7 @@ public:
 			wxStaticBoxSizer* sbs = new wxStaticBoxSizer(new wxStaticBox(mainPanel, wxID_ANY, "Czas sprawdzania IP"), wxHORIZONTAL);
 
 			m_minInterval = new wxSpinCtrl(mainPanel, wxID_ANY, "60", wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, 1440, 60);
+			m_minInterval->SetToolTip(wxT("Aby zastosować zmiany kliknij przycisk \"Sprawdź\""));
 
 			sbs->Add(new wxStaticText(mainPanel, wxID_ANY, wxT("Sprawdź IP co")), 0, wxALL|wxALIGN_CENTER_VERTICAL, 5);
 			sbs->Add(m_minInterval, 1, wxEXPAND|wxALL, 5);
