@@ -21,6 +21,8 @@
 
 #include <memory>
 
+static const wxString ua("Mozilla/5.0 (X11; Linux x86_64; rv:21.0) Gecko/20100101 Firefox/21.0");
+
 enum {
 	ID_NONE = 6000,
 	ID_BUTTON_COPY,
@@ -47,7 +49,7 @@ static void HttpGet(const wxString& url, std::shared_ptr<wxString>& str)
 	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, HttpGet_WriteStr);
 	curl_easy_setopt(curl, CURLOPT_WRITEDATA, reinterpret_cast<wxString *>(str.get()));
 
-	curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Linux x86_64; rv:21.0) Gecko/20100101 Firefox/21.0");
+	curl_easy_setopt(curl, CURLOPT_USERAGENT, ua.c_str());
 	//curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 	curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10L); // 10 sek
 
@@ -76,7 +78,7 @@ static void HttpGet(const wxString& url, std::shared_ptr<wxString>& str)
 		host = host.substr(0, idx);
 	}
 
-	HINTERNET hInternet = InternetOpenW(L"Mozilla/5.0 (X11; Linux x86_64; rv:20.0) Gecko/20100101 Firefox/20.0", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, 0);
+	HINTERNET hInternet = InternetOpenW(ua.wc_str(), INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, 0);
 
 	if (hInternet) {
 		HINTERNET hConnect = InternetConnectW(hInternet, host.wc_str(), 80, NULL, NULL, INTERNET_SERVICE_HTTP, 0, 0);
