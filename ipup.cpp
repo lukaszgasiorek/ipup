@@ -150,7 +150,7 @@ public:
 		{
 			wxStaticBoxSizer* sbs = new wxStaticBoxSizer(new wxStaticBox(mainPanel, wxID_ANY, wxT("Wyrażenie do wyciągania IP")), wxVERTICAL);
 
-			m_ipRegex = new wxTextCtrl(mainPanel, wxID_ANY, "\\d{1,4}\\.\\d{1,4}\\.\\d{1,4}\\.\\d{1,4}");
+			m_ipRegex = new wxTextCtrl(mainPanel, wxID_ANY, "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}");
 
 			sbs->Add(m_ipRegex, 1, wxEXPAND|wxALL, 5);
 			mainSizer->Add(sbs, 0, wxEXPAND|wxALL, 5);
