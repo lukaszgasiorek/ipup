@@ -123,6 +123,9 @@ public:
 		: wxFrame(NULL, wxID_ANY, "IPup", wxDefaultPosition, wxSize(500, 400)),
 		  m_timer(this)
 	{
+#ifdef __WXMSW__
+		SetIcon(wxIcon(wxICON(ipup)));
+#endif
 		wxPanel *mainPanel = new wxPanel(this);
 		wxBoxSizer *mainSizer = new wxBoxSizer(wxVERTICAL);
 
