@@ -120,7 +120,7 @@ class MainWindow : public wxFrame, public wxThreadHelper
 
 public:
 	MainWindow()
-		: wxFrame(NULL, wxID_ANY, "IPup", wxDefaultPosition, wxSize(500, 400)),
+		: wxFrame(NULL, wxID_ANY, "IPup", wxDefaultPosition, wxSize(350, 400)),
 		  m_timer(this)
 	{
 #ifdef __WXMSW__
