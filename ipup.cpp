@@ -49,7 +49,7 @@ static void HttpGet(const wxString& url, std::shared_ptr<wxString>& str)
 	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, HttpGet_WriteStr);
 	curl_easy_setopt(curl, CURLOPT_WRITEDATA, reinterpret_cast<wxString *>(str.get()));
 
-	curl_easy_setopt(curl, CURLOPT_USERAGENT, ua.c_str());
+	curl_easy_setopt(curl, CURLOPT_USERAGENT, ua.ToStdString().c_str());
 	//curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 	curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10L); // 10 sek
 
