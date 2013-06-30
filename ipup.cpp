@@ -253,7 +253,7 @@ private:
 		wxRegEx re(m_ipRegex->GetValue(), wxRE_ADVANCED);
 
 		if (!re.Matches(buff) || re.GetMatch(buff).IsEmpty()) {
-			SetStatusText("Błąd parsowania IP");
+			SetStatusText(wxT("Błąd parsowania IP"));
 			return;
 		}
 
@@ -268,7 +268,7 @@ private:
 		wxFile ipFile;
 
 		if (!ipFile.Create(fn.GetFullPath(), true)) {
-			wxLogError("Błąd podczas tworzenia pliku");
+			wxLogError(wxT("Błąd podczas tworzenia pliku"));
 			return;
 		}
 
