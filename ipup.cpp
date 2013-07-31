@@ -146,6 +146,7 @@ public:
 			m_ipProvider->Append("http://ifconfig.me/ip");
 			m_ipProvider->Append("http://checkip.dyndns.com/");
 			m_ipProvider->Append("http://showip.net/");
+			m_ipProvider->Append("http://bot.whatismyipaddress.com/");
 			m_ipProvider->SetSelection(1);
 
 			sbs->Add(m_ipProvider, 1, wxEXPAND|wxALL, 5);
