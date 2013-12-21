@@ -1,9 +1,9 @@
 ipup - program pobiera z zdalnej strony aktualne IP i zapisuje do pliku
 -------------------------------------
 
-Program zbudowany na bazie biblioteki wxWidgets w wersji z SVN rev. #74043
+Program zbudowany na bazie biblioteki [wxWidgets](http://www.wxwidgets.org/)
 
-Polecenie do skompilowania programu pod systemem Fedora 18:
+Polecenie do skompilowania programu pod Linux:
 
     g++ -Wall -std=c++11 `wx-config --cxxflags` ipup.cpp `wx-config --libs core,net,base` -lcurl -o ipup
 
