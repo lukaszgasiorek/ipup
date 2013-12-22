@@ -21,7 +21,7 @@
 
 #include <memory>
 
-static const wxString ua("Mozilla/5.0 (X11; Linux x86_64; rv:21.0) Gecko/20100101 Firefox/21.0");
+static const wxString ua("Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25.0");
 
 enum {
 	ID_NONE = 6000,
