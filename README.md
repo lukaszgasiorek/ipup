@@ -1,7 +1,6 @@
-ipup - program pobiera z zdalnej strony aktualne IP i zapisuje do pliku
+ipup
 -------------------------------------
-
-Program zbudowany na bazie biblioteki [wxWidgets](http://www.wxwidgets.org/)
+Program pobiera z zdalnej strony aktualne IP i zapisuje do pliku. Zbudowany na bazie biblioteki [wxWidgets](http://www.wxwidgets.org/)
 
 Polecenie do skompilowania programu pod Linux:
 
